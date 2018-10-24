@@ -93,11 +93,7 @@ if ( isset( $_GET['oauth_token'] ) || isset($_GET["oauth_verifier"]) ) {
 	curl_close( $curl ) ;
 
 	// 取得したデータ
-	$response = substr( $res1, $res2["header_size"] ) ;	// 取得したデータ(JSONなど)
-	$header = substr( $res1, 0, $res2["header_size"] ) ;	// レスポンスヘッダー (検証に利用したい場合にどうぞ)
-
-	// [cURL]ではなく、[file_get_contents()]を使うには下記の通りです…
-	// $response = file_get_contents( $request_url , false , stream_context_create( $context ) ) ;
+	$response = substr( $res1, $res2["header_size"] ) ;	// 取得したデータ(JSONなど)。この中にアクセストークンやユーザ情報が含まれている。
 
 	// $responseの内容(文字列)を$query(配列)に直す
 	// aaa=AAA&bbb=BBB → [ "aaa"=>"AAA", "bbb"=>"BBB" ]
@@ -108,10 +104,10 @@ if ( isset( $_GET['oauth_token'] ) || isset($_GET["oauth_verifier"]) ) {
 	$html = file_get_contents($url);
 	$icon="";
 	if(!empty($html)){
-	//data-resolved-url-large要素にオリジナルアイコンのURLがある
-	$pattern = '/data\-resolved\-url\-large=".*?"/';
-	$searched = preg_match($pattern, $html, $match, PREG_OFFSET_CAPTURE, 0);
-	//マッチした文字列から不要部分（要素名、ダブルクォーテーション）を除く
+		//data-resolved-url-large要素にオリジナルアイコンのURLがある
+		$pattern = '/data\-resolved\-url\-large=".*?"/';
+		$searched = preg_match($pattern, $html, $match, PREG_OFFSET_CAPTURE, 0);
+		//マッチした文字列から不要部分（要素名、ダブルクォーテーション）を除く
 		$icon = preg_replace("/(data\-resolved\-url\-large=)|\"/","",$match[0][0]);
 	}else{
 		$icon = NULL;

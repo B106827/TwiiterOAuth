@@ -1,8 +1,8 @@
 <?php
 // 設定項目
-$api_key = "vtcabYflxSTPQnrScq3m7bfX4" ;	// API Key
-$api_secret = "AxXNR3latdyz50LScBm2BgQLwP0MCuB00dZW4yFnrJHDTToexW" ;	// API Secret
-$callback_url = "https://b106827.sakura.ne.jp/work_10/insert.php" ;	// Callback URL (このプログラムのURLアドレス)
+$api_key ="vtcabYflxSTPQnrScq3m7bfX4";	// API Key
+$api_secret ="AxXNR3latdyz50LScBm2BgQLwP0MCuB00dZW4yFnrJHDTToexW";	// API Secret
+$callback_url ="https://b106827.sakura.ne.jp/work_10/insert.php";	// Callback URL (このプログラムのURLアドレス)
 
 // 認証画面のURLを[.../authenticate]にした時にリダイレクトループを防ぐ処理
 if ( isset( $_GET['oauth_token'] ) || isset($_GET["oauth_verifier"]) ) {
