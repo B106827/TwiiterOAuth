@@ -1,0 +1,76 @@
+@charset "utf-8";
+
+body{
+    font-family:Verdana, "ＭＳ Ｐゴシック", sans-serif;
+    font-size:80%;
+    width: 100%;
+    height: 100%;
+}
+/* ログイン画面 */
+.box{
+	width: 100vw;
+	height: auto;
+  	min-height: 100vh;
+	background-color: #fff;
+	background-size: cover;
+	background-position: center;
+	position: fixed;
+	opacity: 0.8;
+	padding: 30px;
+  	box-sizing: border-box;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	flex-wrap: wrap;
+	/* 左右中央寄せ */
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	/* 上下中央寄せ */
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+.login-box{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	/* 左右中央寄せ */
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	/* 上下中央寄せ */
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+.btn-twitter,
+.btn-twitter:hover {
+	width: 50%;
+	background-color: #00d7fa;
+	color: #fff;
+	border-radius: 1px;
+	font-size: 2vw;
+}
+.btn-twitter:after {
+    content: url(../img/iconmonstr-twitter-1-24.png);
+    margin: 10px;
+	position: relative;
+	top: 5px;
+}
+.box p{
+    font-size: calc(50% + 0.5vw);
+    width: 100vw;
+    text-align: center;
+	margin-top: 10px;
+}
+
+
+@media (max-width: 600px) {
+	.btn-twitter,
+	.btn-twitter:hover {
+		width: 70%;
+	}
+}
